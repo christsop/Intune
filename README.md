@@ -126,7 +126,7 @@ Blk• Design System React
     │   └── PageHeader
     │       └── PageHeader.js
     └── views
-        ├── Index.js
+        ├── Components.js
         ├── IndexSections
         │   ├── Basics.js
         │   ├── Download.js

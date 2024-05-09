@@ -33,7 +33,7 @@ import {
   Container,
   Row,
   Col,
-  UncontrolledTooltip,
+  UncontrolledTooltip, CardImg,
 } from "reactstrap";
 
 export default function IndexNavbar() {
@@ -77,137 +77,133 @@ export default function IndexNavbar() {
   return (
     <Navbar className={"fixed-top " + color} color-on-scroll="100" expand="lg">
       <Container>
-        <div className="navbar-translate">
-          <NavbarBrand to="/" tag={Link} id="navbar-brand">
-            <span>BLK• </span>
-            Design System React
-          </NavbarBrand>
-          <UncontrolledTooltip placement="bottom" target="navbar-brand">
-            Designed and Coded by Creative Tim
-          </UncontrolledTooltip>
-          <button
+        <img
+            alt="..."
+            className="img-fluid rounded-circle shadow"
+            src={require("assets/images/logo.png")}
+            style={{width: "60px"}}
+        />
+        <button
             aria-expanded={collapseOpen}
             className="navbar-toggler navbar-toggler"
             onClick={toggleCollapse}
-          >
-            <span className="navbar-toggler-bar bar1" />
-            <span className="navbar-toggler-bar bar2" />
-            <span className="navbar-toggler-bar bar3" />
-          </button>
-        </div>
+        >
+          <span className="navbar-toggler-bar bar1"/>
+          <span className="navbar-toggler-bar bar2"/>
+          <span className="navbar-toggler-bar bar3"/>
+        </button>
         <Collapse
-          className={"justify-content-end " + collapseOut}
-          navbar
-          isOpen={collapseOpen}
-          onExiting={onCollapseExiting}
-          onExited={onCollapseExited}
+            className={"justify-content-center " + collapseOut}
+            navbar
+            isOpen={collapseOpen}
+            onExiting={onCollapseExiting}
+            onExited={onCollapseExited}
         >
           <div className="navbar-collapse-header">
             <Row>
               <Col className="collapse-brand" xs="6">
                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                  BLK•React
+                  <img
+                      alt="..."
+                      className="img-fluid rounded-circle shadow"
+                      src={require("assets/images/logo.png")}
+                      style={{width: "60px"}}
+                  />
                 </a>
               </Col>
               <Col className="collapse-close text-right" xs="6">
                 <button
-                  aria-expanded={collapseOpen}
-                  className="navbar-toggler"
-                  onClick={toggleCollapse}
+                    aria-expanded={collapseOpen}
+                    className="navbar-toggler"
+                    onClick={toggleCollapse}
                 >
-                  <i className="tim-icons icon-simple-remove" />
+                  <i className="tim-icons icon-simple-remove"/>
                 </button>
               </Col>
             </Row>
           </div>
           <Nav navbar>
-            <NavItem className="p-0">
-              <NavLink
-                data-placement="bottom"
-                href="https://twitter.com/CreativeTim"
-                rel="noopener noreferrer"
-                target="_blank"
-                title="Follow us on Twitter"
-              >
-                <i className="fab fa-twitter" />
-                <p className="d-lg-none d-xl-none">Twitter</p>
-              </NavLink>
-            </NavItem>
-            <NavItem className="p-0">
-              <NavLink
-                data-placement="bottom"
-                href="https://www.facebook.com/CreativeTim"
-                rel="noopener noreferrer"
-                target="_blank"
-                title="Like us on Facebook"
-              >
-                <i className="fab fa-facebook-square" />
-                <p className="d-lg-none d-xl-none">Facebook</p>
-              </NavLink>
-            </NavItem>
-            <NavItem className="p-0">
-              <NavLink
-                data-placement="bottom"
-                href="https://www.instagram.com/CreativeTimOfficial"
-                rel="noopener noreferrer"
-                target="_blank"
-                title="Follow us on Instagram"
-              >
-                <i className="fab fa-instagram" />
-                <p className="d-lg-none d-xl-none">Instagram</p>
-              </NavLink>
-            </NavItem>
             <UncontrolledDropdown nav>
               <DropdownToggle
-                caret
-                color="default"
-                data-toggle="dropdown"
-                href="#pablo"
-                nav
-                onClick={(e) => e.preventDefault()}
+                  caret
+                  color="default"
+                  data-toggle="dropdown"
+                  href="#pablo"
+                  nav
+                  onClick={(e) => e.preventDefault()}
               >
-                <i className="fa fa-cogs d-lg-none d-xl-none" />
-                Getting started
+                <i className="fa fa-cogs d-lg-none d-xl-none"/>
+                Features
               </DropdownToggle>
               <DropdownMenu className="dropdown-with-icons">
                 <DropdownItem href="https://demos.creative-tim.com/blk-design-system-react/#/documentation/overview">
-                  <i className="tim-icons icon-paper" />
-                  Documentation
+                  <i className="tim-icons icon-paper"/>
+                  Feature 1
                 </DropdownItem>
                 <DropdownItem tag={Link} to="/register-page">
-                  <i className="tim-icons icon-bullet-list-67" />
-                  Register Page
+                  <i className="tim-icons icon-bullet-list-67"/>
+                  Feature 2
                 </DropdownItem>
                 <DropdownItem tag={Link} to="/landing-page">
-                  <i className="tim-icons icon-image-02" />
-                  Landing Page
+                  <i className="tim-icons icon-image-02"/>
+                  Feature 3
                 </DropdownItem>
                 <DropdownItem tag={Link} to="/profile-page">
-                  <i className="tim-icons icon-single-02" />
-                  Profile Page
+                  <i className="tim-icons icon-single-02"/>
+                  Feature 4
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
-              <Button
-                className="nav-link d-none d-lg-block"
-                color="primary"
-                target="_blank"
-                href="https://www.creative-tim.com/product/blk-design-system-pro-react?ref=bdsr-user-archive-index-navbar-upgrade-pro"
+              <NavLink
+                  active
+                  href="#"
               >
-                <i className="tim-icons icon-spaceship" /> Upgrade to PRO
-              </Button>
+                FAQ
+              </NavLink>
             </NavItem>
             <NavItem>
-              <Button
-                className="nav-link d-none d-lg-block"
-                color="default"
-                onClick={scrollToDownload}
+              <NavLink
+                  active
+                  href="#"
               >
-                <i className="tim-icons icon-cloud-download-93" /> Download
-              </Button>
+                About us
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                  active
+                  href="#"
+              >
+                Contact
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                  active
+                  href="#"
+              >
+                Support
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                  active
+                  href="#"
+              >
+                Wishlist
+              </NavLink>
             </NavItem>
           </Nav>
+        </Collapse>
+        <Collapse className={"justify-content-end"} navbar
+                  isOpen={collapseOpen}
+                  onExiting={onCollapseExiting}
+                  onExited={onCollapseExited}>
+            <Button className="btn-link" color="success">
+              Sign in
+            </Button>
+            <Button color="success">Sign up</Button>
         </Collapse>
       </Container>
     </Navbar>
