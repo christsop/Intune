@@ -111,6 +111,7 @@ export default function IndexNavbar() {
                   />
                 </a>
               </Col>
+
               <Col className="collapse-close text-right" xs="6">
                 <button
                     aria-expanded={collapseOpen}
@@ -120,6 +121,12 @@ export default function IndexNavbar() {
                   <i className="tim-icons icon-simple-remove"/>
                 </button>
               </Col>
+            </Row>
+            <Row className={"justify-content-left"}>
+              <Button className="btn-link" color="success">
+                Sign in
+              </Button>
+              <Button color="success">Sign up</Button>
             </Row>
           </div>
           <Nav navbar>
@@ -196,15 +203,12 @@ export default function IndexNavbar() {
             </NavItem>
           </Nav>
         </Collapse>
-        <Collapse className={"justify-content-end"} navbar
-                  isOpen={collapseOpen}
-                  onExiting={onCollapseExiting}
-                  onExited={onCollapseExited}>
-            <Button className="btn-link" color="success">
-              Sign in
-            </Button>
-            <Button color="success">Sign up</Button>
-        </Collapse>
+        <Col className="justify-content-end">
+          <Button className="btn-link" color="success">
+            Sign in
+          </Button>
+          <Button color="success">Sign up</Button>
+        </Col>
       </Container>
     </Navbar>
   );
