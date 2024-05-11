@@ -1,3 +1,7 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
 $border-colors: (
         #e14eca,
         #00f2c3,
@@ -24,13 +28,16 @@ $border-colors: (
     &:nth-child(odd) {
       margin-top: 1em;
 
-      @include media-breakpoint-down(xs) {
+      @include media-breakpoint-down(md) {
         margin-top: 0;
       }
     }
 
     &:nth-child(4) {
       margin-left: 2em;
+      @include media-breakpoint-down(md) {
+        margin-left: 0;
+      }
     }
     @for $i from 1 through length($border-colors) {
       &:nth-child(#{$i}) {
