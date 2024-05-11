@@ -1,0 +1,36 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+.page-header-custom {
+  margin: 20em 0 5em 0;
+
+  //@include media-breakpoint-down(sm) {
+  //  height: unset;
+  //  min-height: unset;
+  //  margin-top: 10em;
+  //}
+
+  .title {
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+
+    .intune {
+      color: #00f2c3;
+      font-size: 60px;
+      margin-right: .3em;
+    }
+  }
+
+  .potential {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .types {
+    display: flex;
+    justify-content: center;
+  }
+}

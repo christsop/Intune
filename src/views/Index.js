@@ -34,6 +34,7 @@ import NucleoIcons from "views/IndexSections/NucleoIcons.js";
 import Signup from "views/IndexSections/Signup.js";
 import Examples from "views/IndexSections/Examples.js";
 import Download from "views/IndexSections/Download.js";
+import ImageGallery from "../components/ImageGallery/ImageGallery";
 
 export default function Components() {
   React.useEffect(() => {
@@ -46,6 +47,24 @@ export default function Components() {
   return (
     <>
       <IndexNavbar />
+      <div className="wrapper">
+        <PageHeader />
+          <ImageGallery />
+        {/*<div className="main">*/}
+        {/*  <Basics />*/}
+        {/*  <Navbars />*/}
+        {/*  <Tabs />*/}
+        {/*  <Pagination />*/}
+        {/*  <Notifications />*/}
+        {/*  <Typography />*/}
+        {/*  <JavaScript />*/}
+        {/*  <NucleoIcons />*/}
+        {/*  <Signup />*/}
+        {/*  <Examples />*/}
+        {/*  <Download />*/}
+        {/*</div>*/}
+        {/*<Footer />*/}
+      </div>
     </>
   );
 }

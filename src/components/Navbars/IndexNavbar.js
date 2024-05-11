@@ -15,7 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
 // reactstrap components
 import {
@@ -25,7 +25,6 @@ import {
   DropdownMenu,
   DropdownItem,
   UncontrolledDropdown,
-  NavbarBrand,
   Navbar,
   NavItem,
   NavLink,
@@ -33,7 +32,6 @@ import {
   Container,
   Row,
   Col,
-  UncontrolledTooltip, CardImg,
 } from "reactstrap";
 
 export default function IndexNavbar() {
@@ -73,7 +71,8 @@ export default function IndexNavbar() {
     document
       .getElementById("download-section")
       .scrollIntoView({ behavior: "smooth" });
-  };
+  }
+
   return (
     <Navbar className={"fixed-top " + color} color-on-scroll="100" expand="lg">
       <Container>
@@ -203,7 +202,7 @@ export default function IndexNavbar() {
             </NavItem>
           </Nav>
         </Collapse>
-        <Col className="justify-content-end">
+        <Col className="justify-content-end align-items-center d-none d-lg-block">
           <Button className="btn-link" color="success">
             Sign in
           </Button>

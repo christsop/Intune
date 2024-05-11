@@ -1,0 +1,42 @@
+$border-colors: (
+        #e14eca,
+        #00f2c3,
+        #1d8cf8,
+        #ff8d72,
+        #fd5d93,
+        #11cdef
+);
+
+
+.image-gallery {
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+
+  .bordered-image {
+    width: 330px;
+    height: 240px;
+    object-fit: cover;
+
+    &:nth-child(odd) {
+      margin-top: 1em;
+
+      @include media-breakpoint-down(xs) {
+        margin-top: 0;
+      }
+    }
+
+    &:nth-child(4) {
+      margin-left: 2em;
+    }
+    @for $i from 1 through length($border-colors) {
+      &:nth-child(#{$i}) {
+        border: 1px solid nth($border-colors, $i);
+      }
+
+    }
+  }
+}
